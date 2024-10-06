@@ -1,6 +1,7 @@
 export interface User {
     id: number;
     login: string;
-    public_repos: number;
+    repos_url: string;
     html_url: string;
+    public_repos?: number;
   }

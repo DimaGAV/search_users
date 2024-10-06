@@ -15,7 +15,7 @@ const UserList: React.FC<UserListProps> = ({ users, onSort, onUserClick }) => {
       <ul>
         {users.map((user) => (
           <li key={user.id} onClick={() => onUserClick(user)}>
-            {user.login} - Репозитории: {user.public_repos}
+            {user.login} - Репозитории: {user.public_repos !== null ? user.public_repos : 'Загрузка...'}
           </li>
         ))}
       </ul>
