@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { SearchBtn, SearchForm, SearchInput } from "./Search.styled";
 
 interface SearchProps {
   onSearch: (query: string) => void;
 }
 
 const Search: React.FC<SearchProps> = ({ onSearch }) => {
-  const [query, setQuery] = useState<string>('');
+  const [query, setQuery] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -15,15 +16,15 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <SearchForm onSubmit={handleSubmit}>
+      <SearchInput
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder="Введите логин пользователя"
+        placeholder="Введите логин для поиска"
       />
-      <button type="submit">Поиск</button>
-    </form>
+      <SearchBtn type="submit">Поиск</SearchBtn>
+    </SearchForm>
   );
 };
 

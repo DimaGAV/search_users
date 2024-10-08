@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface PaginationProps {
   currentPage: number;
@@ -6,7 +6,11 @@ interface PaginationProps {
   onPageChange: (page: number) => void;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
+const Pagination: React.FC<PaginationProps> = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+}) => {
   return (
     <div>
       {Array.from({ length: totalPages }, (_, index) => (

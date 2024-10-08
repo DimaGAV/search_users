@@ -1,6 +1,6 @@
-// components/UserDetails/UserDetails.tsx
-import React from 'react';
-import { User } from '../../types/User';
+import React from "react";
+import { User } from "../../types/User";
+import { Header, Text } from "./UserDetails.styled";
 
 interface UserDetailsProps {
   user: User | null;
@@ -9,10 +9,12 @@ interface UserDetailsProps {
 const UserDetails: React.FC<UserDetailsProps> = ({ user }) => {
   return user ? (
     <div>
-      <h2>{user.login}</h2>
-      <p>ID: {user.id}</p>
-      <p>Репозитории: {user.public_repos}</p>
-      <p>URL: <a href={user.html_url}>{user.html_url}</a></p>
+      <Header>{user.login}</Header>
+      <Text>ID: {user.id}</Text>
+      <p>Репозиториев: {user.public_repos}</p>
+      <p>
+        URL: <a href={user.html_url}>{user.html_url}</a>
+      </p>
     </div>
   ) : null;
 };
